@@ -1,3 +1,4 @@
+import React from "react"
 import "./scss/style.scss";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
