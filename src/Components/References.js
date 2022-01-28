@@ -4,7 +4,7 @@ function References() {
   return <>
     <div className="references" id="references">
         <h1>References 🪗</h1>
-        <p>From fully functional websites, over top performing tracks on Beatport, to Gigs in amazing locations, not to forget one hour experimental films. Please have a look into it! p.s.: Just click on a slider to increase its size!</p>
+        <p>Fully functional websites, top performing tracks on Beatport, gigs in amazing locations and one hour experimental films. Here you can have a look into it and follow the links to explore them in full effect! By the way: Just click on a image slider to increase its size!</p>
         <div>
             <div>
                 <h2>In the Web</h2>

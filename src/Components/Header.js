@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return <>
-    <header>
+    <header id="top">
         <picture>
             <source srcSet={require("../images/bannerSmall.jpg")} media="(max-width: 850px)" />
             <source srcSet={require("../images/bannerMid.jpg")} media="(max-width: 1600px)" />
@@ -13,7 +13,7 @@ function Header() {
             <h1>Below Surface Medien</h1>
             <h2>Web-Development · Music Production · Video Editing</h2>
         </div>
-        <a href="#about">Let's Go!</a>
+        <p>Scroll down - fun awaits!</p>
     </header>
   </>;
 }

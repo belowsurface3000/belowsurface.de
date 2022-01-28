@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { HashRouter } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function OutOfPageFlow() {
 
@@ -25,13 +27,21 @@ function OutOfPageFlow() {
             }
             prevScrollPos = currentScrollPos;
         });
-    
+    // Navigation hidden on small screens
+        const [navigationHidden, setNavigationHidden] = useState(false);
+        window.addEventListener("resize", () => {
+            if (window.innerWidth <= 1500) {
+                setNavigationHidden(true);
+            } else {
+                setNavigationHidden(false)
+            }
+        });
 
     return <>
         <div className="background-color"></div>
 
         {/* Navigation trigger button */}
-        <div className={(scrollUp) ? "navigation-trigger" : "navigation-trigger navigation-hidden"} onClick={toggleNavigation}>
+        <div className={(scrollUp) ? "navigation-trigger" : "navigation-trigger navigation-button-hidden"} onClick={toggleNavigation}>
             <div className={(navigation) ? "nav-icon open" : "nav-icon"}>
                 <span></span>
                 <span></span>
@@ -40,19 +50,19 @@ function OutOfPageFlow() {
         </div>
 
         {/* NAVIGATION */}
-        {navigation &&
-            <nav className="navigation">
-                <div>
-                    <a href="index.html#home" onClick={toggleNavigation}>Home</a>
-                    <a href="index.html#about" onClick={toggleNavigation}>About</a>
-                    <a href="index.html#services" onClick={toggleNavigation}>Services</a>
-                    <a href="index.html#skills" onClick={toggleNavigation}>Skills</a>
-                    <a href="index.html#references" onClick={toggleNavigation}>References</a>
-                    <a href="index.html#contact" onClick={toggleNavigation}>Contact</a>
-                </div>
-                <p>Navigation</p>
-            </nav>
-        }
+        <nav className={(navigationHidden && !navigation) ? "navigation navigation-hidden" : "navigation"}>
+            <div>
+                <HashRouter>
+                    <HashLink smooth to="#top" onClick={toggleNavigation}>Top</HashLink>
+                    <HashLink smooth to="#about" onClick={toggleNavigation}>About</HashLink>
+                    <HashLink smooth to="#services" onClick={toggleNavigation}>Services</HashLink>
+                    <HashLink smooth to="#skills" onClick={toggleNavigation}>Skills</HashLink>
+                    <HashLink smooth to="#references" onClick={toggleNavigation}>References</HashLink>
+                    <HashLink smooth to="#contact" onClick={toggleNavigation}>Contact</HashLink>
+                </HashRouter>
+            </div>
+            <p>Navigation</p>
+        </nav>
     </>;
 }
 
