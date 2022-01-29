@@ -1,3 +1,5 @@
 node_modules
 .env
 build
+src/Components/Datenschutz.js
+src/Components/Impressum.js
