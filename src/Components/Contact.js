@@ -14,8 +14,6 @@ function Contact() {
         setContactTermsAccepted(false);
       }
   }      
-  
-  console.log(userInput);
 
   // emailjs start
   const emailService = process.env.REACT_APP_EMAIL_SERVICE;

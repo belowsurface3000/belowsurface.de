@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -36,6 +36,11 @@ function OutOfPageFlow() {
                 setNavigationHidden(false)
             }
         });
+        useEffect(() => {
+            if (window.innerWidth <= 1500) {
+                setNavigationHidden(true);
+            }
+        }, []);
 
     return <>
         <div className="background-color"></div>
@@ -49,7 +54,7 @@ function OutOfPageFlow() {
             </div>
         </div>
 
-        {/* NAVIGATION */}
+        {/* NAVIGATION - if nav is hidden and navigation is false */}
         <nav className={(navigationHidden && !navigation) ? "navigation navigation-hidden" : "navigation"}>
             <div>
                 <HashRouter>
