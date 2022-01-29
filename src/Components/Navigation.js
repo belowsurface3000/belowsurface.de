@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 function OutOfPageFlow() {
@@ -43,8 +42,6 @@ function OutOfPageFlow() {
         }, []);
 
     return <>
-        <div className="background-color"></div>
-
         {/* Navigation trigger button */}
         <div className={(scrollUp) ? "navigation-trigger" : "navigation-trigger navigation-button-hidden"} onClick={toggleNavigation}>
             <div className={(navigation) ? "nav-icon open" : "nav-icon"}>
@@ -57,14 +54,12 @@ function OutOfPageFlow() {
         {/* NAVIGATION - if nav is hidden and navigation is false */}
         <nav className={(navigationHidden && !navigation) ? "navigation navigation-hidden" : "navigation"}>
             <div>
-                <HashRouter>
-                    <HashLink smooth to="#top" onClick={toggleNavigation}>Top</HashLink>
-                    <HashLink smooth to="#about" onClick={toggleNavigation}>About</HashLink>
-                    <HashLink smooth to="#services" onClick={toggleNavigation}>Services</HashLink>
-                    <HashLink smooth to="#skills" onClick={toggleNavigation}>Skills</HashLink>
-                    <HashLink smooth to="#references" onClick={toggleNavigation}>References</HashLink>
-                    <HashLink smooth to="#contact" onClick={toggleNavigation}>Contact</HashLink>
-                </HashRouter>
+                <HashLink smooth to="#top" onClick={toggleNavigation}>Top</HashLink>
+                <HashLink smooth to="#about" onClick={toggleNavigation}>About</HashLink>
+                <HashLink smooth to="#services" onClick={toggleNavigation}>Services</HashLink>
+                <HashLink smooth to="#skills" onClick={toggleNavigation}>Skills</HashLink>
+                <HashLink smooth to="#references" onClick={toggleNavigation}>References</HashLink>
+                <HashLink smooth to="#contact" onClick={toggleNavigation}>Contact</HashLink>
             </div>
             <p>Navigation</p>
         </nav>

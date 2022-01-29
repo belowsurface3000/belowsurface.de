@@ -35,8 +35,7 @@ function Contact() {
   return <>
     <div className="contact" id="contact">
       <h1>Contact 💌</h1>
-      <p>It's getting serious! Please use the contact form to get in touch! Note: Sending spam or advertising is strictly forbidden. You can use the contact form for questions, interest in our products or if you want to collaborate.<br />
-      **ADVERTISING & SPAM ARE STRICTLY FORBIDDEN**</p>
+      <p>It's getting serious! Please use the contact form to get in touch! Note: Sending spam or advertising is strictly forbidden. You can use the contact form for questions, interest in our products or if you want to collaborate.</p>
       {(contactTermsAccepted) ? 
         <form ref={form} onSubmit={sendEmail}>
           <label htmlFor="name">Your Name:</label>
@@ -49,7 +48,7 @@ function Contact() {
         </form> 
       :
         <form>
-          <p>Sending spam or advertising is strictly forbidden. You can use the contact form for questions or if you want to collaborate with us in music.<br/>Type "okay" to unlock the contact form:</p>
+          <p>**ADVERTISING & SPAM ARE STRICTLY FORBIDDEN**<br />You can use the contact form for questions or if you want to collaborate with us in music.<br/>Type "okay" to unlock the contact form:</p>
           <label htmlFor="riddle"></label>
           <input type="text" id="riddle" name="riddle" placeholder="Just type 'okay' in here" value={userInput} onChange={changeHandler} required />
         </form>
