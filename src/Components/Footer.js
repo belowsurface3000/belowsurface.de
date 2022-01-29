@@ -13,10 +13,9 @@ function Footer() {
             <h1>Reached the end!</h1>
             <div className="links">
                 <a href="impressum.html">Impressum</a>
+                <p>|</p>
                 <a href="datenschutz.html">Datenschutz</a>
-                <a href="https://besurelabel.de" target="_blank" rel="noreferrer">Music Label</a>
             </div>
-            <a href="#home">Take me to the top!</a>
         </div>
     </footer>
   </>;

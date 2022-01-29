@@ -13,8 +13,7 @@ function Contact() {
       } else {
         setContactTermsAccepted(false);
       }
-  }      
-
+  }
   // emailjs start
   const emailService = process.env.REACT_APP_EMAIL_SERVICE;
   const emailTemplate = process.env.REACT_APP_EMAIL_TEMPLATE;

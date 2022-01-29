@@ -13,7 +13,6 @@ function Header() {
             <h1>Below Surface Medien</h1>
             <h2>Web-Development · Music Production · Video Editing</h2>
         </div>
-        <p>Scroll down - fun awaits!</p>
     </header>
   </>;
 }
