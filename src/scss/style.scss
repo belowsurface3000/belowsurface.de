@@ -525,7 +525,6 @@ main {
         }
     }
 }
-// Main end
 
 // Footer start
 footer {
@@ -539,9 +538,6 @@ footer {
         object-fit: cover;
         opacity: .1;
     }
-    a {
-        color: $sec-color;
-    }
     .content {
         width: 100%;
         height: 100%;
@@ -553,9 +549,9 @@ footer {
         flex-direction: column;
         h1 {
             text-align: center;
-            color: $sec-color;
-            text-shadow: $text-shadow-bright;
-            font-size: 4rem;
+            color: $prim-color;
+            text-shadow: $text-shadow-dark;
+            font-size: 5rem;
             letter-spacing: 2px;
             word-spacing: 5px;
             margin-bottom: 30px;
@@ -563,25 +559,19 @@ footer {
         .links {
             @include flexBox;
             margin-top: 15px;
-            a {
-                margin: 0 10px 1px;
-                font-size: 1.3rem;
+            > p, 
+            > a {
+                color: $prim-color;
+                text-shadow: $text-shadow-dark;
+                font-size: 1.6rem;
+            }
+            > a {
+                margin: 0 10px;
+                border-bottom: solid 2px transparent;
             }
             > a:hover {
-                margin-bottom: 0px;
-                border-bottom: solid 1px black;
+                border-bottom: solid 2px $prim-color;
             }
-        }
-        // arrow up
-        > a {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: text-shadow .2s;
-            font-size: 1.3rem;
-            @include flexBox; 
-            flex-direction: column;
         }
     }
 }
