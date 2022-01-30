@@ -10,16 +10,23 @@ function Footer() {
         <source srcSet={require("../images/bannerHigh.jpg")} />
         <img src={require("../images/banner.JPG")} alt="The belowsurface.de banner" />
       </picture>
-        <div className="content">
-            <h1>Reached the end!</h1>
-            <div className="links">
-                <NavLink to="impressum">Impressum</NavLink>
-                <p>|</p>
-                <NavLink to="main">Main Page</NavLink>
-                <p>|</p>
-                <NavLink to="datenschutz">Datenschutz</NavLink>
-            </div>
+      <div className="content">
+        <h1>Reached the end!</h1>
+        <div className="links">
+          <a href="https://github.com/belowsurface3000?tab=repositories" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://besurelabel.de" target="_blank" rel="noreferrer">Music Label</a>
+          <a href="https://soundcloud.com/belowsurface" target="_blank" rel="noreferrer">Soundcloud</a>
+          <a href="https://www.youtube.com/c/BeSurelabel/featured" target="_blank" rel="noreferrer">Youtube</a>
         </div>
+      </div>
+      <div className="bottom-text">
+        <p>(c) 2022 Below Surface Medien</p>
+        <div>
+          <NavLink to="impressum">Impressum</NavLink>
+          <p>|</p>
+          <NavLink to="datenschutz">Datenschutz</NavLink>
+        </div>
+      </div>
     </footer>
   </>;
 }

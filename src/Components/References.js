@@ -8,7 +8,7 @@ function References() {
         <div className="references" id="references">
             <h2>References 🪗</h2>
             <p>Fully functional websites, top performing tracks on Beatport, gigs in amazing locations and one hour experimental films. Here you can have a look into it and follow the links to explore them in full effect! By the way: Just click on a image slider to increase its size!</p>
-            <div>
+            <div className="sliders-container">
                 <Slider1 />
                 <Slider2 />
                 <Slider3 />

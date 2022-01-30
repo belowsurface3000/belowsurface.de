@@ -31,7 +31,7 @@ body {
         top: 0;
         z-index: -100;
     }
-    h1, h2, h3, h4, p, a, li, label, input, button, small {
+    h1, h2, h3, h4, p, a, li, label, input, textarea, button, small {
         color: $prim-color;
         text-shadow: $text-shadow-dark;
     }
@@ -42,7 +42,7 @@ body {
     h2 {font-size: 3.5rem};
     h3 {font-size: 2.5rem};
     h4 {font-size: 2rem};
-    p, a, li, label, input, button {font-size: 1.6rem};
+    p, a, li, label, input, textarea, button {font-size: 1.6rem};
     p {
         line-height: $line-height;
         word-spacing: 7px;
@@ -189,6 +189,7 @@ body {
         height: 100vh;
         width: 100vw;
         position: fixed;
+        top: 0;
         z-index: 99;
         background: rgba(0, 0, 0, .9);
         > div {
@@ -237,7 +238,7 @@ header {
         left: 50%;
         transform: translate(-50%, -50%);
         > h1 {
-            font-size: 6rem;
+            font-size: 5.5rem;
             letter-spacing: 2px;
             word-spacing: 5px;
             margin-bottom: 30px;
@@ -445,8 +446,6 @@ main {
                 outline: none;
                 background: none;
                 border: solid 3px $prim-color;
-                font-size: 1.5rem;
-                color: $prim-color;
                 padding: 5px;
                 width: calc(100% - 10px);
                 height: 175px;
@@ -520,14 +519,28 @@ footer {
             margin-bottom: 30px;
         }
         .links {
-            @include flexBox;
-            margin-top: 15px;
-            > p, 
             > a {
-                color: $prim-color;
-                text-shadow: $text-shadow-dark;
-                font-size: 1.6rem;
+                margin: 0 10px;
+                border-bottom: solid 2px transparent;
             }
+            > a:hover {
+                border-bottom: solid 2px $prim-color;
+            }
+        }
+    }
+    .bottom-text {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flexBox;
+        flex-direction: column;
+        p, a {
+            padding: 0;
+            font-size: 1.3rem;
+        }
+        > div {
+            @include flexBox;
             > a {
                 margin: 0 10px;
                 border-bottom: solid 2px transparent;
@@ -544,98 +557,129 @@ footer {
 
 // Media Queries
 @media screen and (max-width: 1500px) {
-    h1 {
-        font-size: 4rem;
+    :root {
+        font-size: 90%;
     }
-    h2 {
-        font-size: 1.6rem;
-    }
-    h1::before,
-    h1::after {
-    margin: 0px 15px;
-    }
-}
-// small desktop
-@media screen and (max-width: 1050px) {
-    p {
-        font-size: 1.3rem;
-    }
-    .socials {
-        flex-direction: row;
-        a {
-            margin: 10px 20px;
-            img {
-                width: 55px;
+    header {
+        .banner {  
+            > h1 {
+                font-size: 4rem;
+            }
+            > h1::before,
+            > h1::after {
+                margin: 0 10px;
+            }
+            > h4 {
+                font-size: 1.5rem;
             }
         }
     }
-    label, input, textarea, button {
-        font-size: 1rem;
-    }
-    h1 {
-        font-size: 3.5rem;
-    }
-    h2 {
-        font-size: 1.3rem;
-    }
-    h1::before,
-    h1::after {
-        content: "";
-    }
-    p {
-        font-size: 1.1rem;
-    }
-    a { 
-        font-size: 1.1rem;
-    }
-    
-    .about-flexbox {
-        flex-direction: column;
-        p, img {
-            margin: 0 0 35px;
+}
+@media screen and (max-width: 1050px) {
+    header {
+        .banner {  
+            > h1::before,
+            > h1::after {
+                content: "";
+            }
         }
     }
-    .services-flexbox {
-        flex-direction: column-reverse;
-        p, img {
-            margin: 0 0 35px;
-        }
-    }
-    .skills-first-flexbox {
-        flex-direction: column;
-        p, img {
-            margin: 0;
+    main {
+        .references {
+            > div {
+                flex-direction: column;
+                justify-content: space-between;
+                > div {
+                    width: 100%;
+                    height: 450px;
+                }
+                > .increase-me {
+                    width: 100vw;
+                    height: 100vh;
+                    > .image-slider-container {
+                        > .image-slider {
+                            > div {
+                                > img {
+                                    object-fit: contain;
+                                }
+                            }
+                        } 
+                    }
+                }
+            }
+            .socials {
+                flex-direction: row;
+                a {
+                    margin: 10px 20px;
+                    img {
+                        width: 65px;
+                    }
+                }
+            }
         }
     }
 }
-// tablet
 @media screen and (max-width: 768px) {
+    :root {
+        font-size: 85%;
+    }
     h1, h2 {
         display: flex;
         flex-direction: column;
     }
-    // contact form
-    form {
-        width: 275px;
-        label, input, textarea, button {
-            font-size: 1.3rem;
+    main {
+        > div {
+            min-height: 0;
+        }
+        h2 {
+            margin-top: 25px;
+        }
+        .about-flexbox {
+            flex-direction: column;
+            p, img {
+                margin: 0 0 35px;
+            }
+            > img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        .services-flexbox {
+            flex-direction: column-reverse;
+            p, img {
+                margin: 0 0 35px;
+            }
+            > img {
+                display: none;
+            }
+        }
+        .skills-first-flexbox {
+            flex-direction: column;
+            p, img {
+                margin: 0;
+            }
+            > img {
+                display: none;
+            }
+        }
+        .contact {
+            >form {
+                max-width: 85%;
+            }
         }
     }
 }
-
-
-
-
-// make sliders big on click
-.increase-me {
-    position: fixed;
-    z-index: 100;
-    background: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 95vw;
-    height: 95vh;
-    box-shadow: 0 0 1000px rgba(0,0,0,0.3);
-    outline: solid 3px $prim-bg;
+@media screen and (max-width: 500px) {
+    main {
+        .references {
+            .socials {
+                a {
+                    margin: 10px;
+                    img {
+                        width: 55px;
+                    }
+                }
+            }
+        }
+    }
 }
