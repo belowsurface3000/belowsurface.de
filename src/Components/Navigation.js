@@ -61,7 +61,9 @@ function OutOfPageFlow() {
                 <HashLink smooth to="#references" onClick={toggleNavigation}>References</HashLink>
                 <HashLink smooth to="#contact" onClick={toggleNavigation}>Contact</HashLink>
             </div>
-            <p>Navigation</p>
+            <div>
+                <p>Navigation</p>
+            </div>
         </nav>
     </>;
 }

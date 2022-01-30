@@ -6,7 +6,7 @@ import Slider3 from './Slider3';
 function References() {
     return <>
         <div className="references" id="references">
-            <h1>References 🪗</h1>
+            <h2>References 🪗</h2>
             <p>Fully functional websites, top performing tracks on Beatport, gigs in amazing locations and one hour experimental films. Here you can have a look into it and follow the links to explore them in full effect! By the way: Just click on a image slider to increase its size!</p>
             <div>
                 <Slider1 />

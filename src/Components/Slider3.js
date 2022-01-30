@@ -105,7 +105,7 @@ function Slider3() {
 
     return (
         <div className={increase ? "increase-me" : ""}>
-            <h2>In the Music</h2>
+            <h4>In the Music</h4>
             <div className="image-slider-container">
                 <div className="left-arrow" onClick={prevSlide}>&#10094;</div>
                 <div className="right-arrow" onClick={nextSlide}>&#10095;</div>
