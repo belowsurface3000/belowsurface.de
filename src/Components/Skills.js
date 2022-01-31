@@ -1,13 +1,18 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 function Skills() {
   return <>
     <div className="skills" id="skills">
+
         <h2>Skills 💪</h2>
         <div className="skills-first-flexbox">
             <p>Time to shine. Our biggest advantage is having skills and knowledge in various professions. Therefore we are able to work independently and can deliver not only the finished product, but also the bits of pieces necessary to build it in first place: From audio recording to editing, still image and film work, to state of the art programming. Not to forget our trophies in music promotion! Please have a small glimpse into our capabilities:</p>
-            <img src={require("../images/beth-skills.jpg")} alt="An olf fashioned light bulb is glowing" />
+            <LazyLoad>
+                <img src={require("../images/beth-skills.jpg")} alt="An olf fashioned light bulb is glowing" />
+            </LazyLoad>
         </div>
+
         <div className="skills-second-flexbox">
             <div>
                 <h4>Web-Dev. Frontend</h4>
@@ -40,6 +45,7 @@ function Skills() {
                 </ul>
             </div>
         </div>
+        
     </div>
   </>;
 }

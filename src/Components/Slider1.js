@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import LazyLoad from 'react-lazyload';
 
 function Slider1() {
 
@@ -61,7 +62,9 @@ function Slider1() {
                                 <div className={(index === current) ? "slide-active" : "slide"}>
                                     {index === current && (
                                         <>
-                                            <img src={slide.image} alt={slide.alt} onClick={toggleIncrease} />
+                                            <LazyLoad>
+                                                <img src={slide.image} alt={slide.alt} onClick={toggleIncrease} />
+                                            </LazyLoad>
                                             <a href={slide.link} target="_blank" rel="noreferrer">{slide.text}</a>
                                         </>
                                     )}
