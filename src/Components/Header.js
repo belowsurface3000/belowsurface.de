@@ -16,7 +16,11 @@ function Header() {
 
         <div className="banner">
             <h1>Below Surface Medien</h1>
-            <h4>Web-Development · Music Production · Video Editing</h4>
+            <div>
+              <h4>Web-Development</h4>
+              <h4>Music Production</h4>
+              <h4>Video Editing</h4>
+            </div>
         </div>
 
     </header>

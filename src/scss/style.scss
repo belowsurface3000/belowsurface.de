@@ -246,15 +246,23 @@ header {
             word-spacing: 5px;
             margin-bottom: 30px;
         } 
-        > h4 {
-            font-weight: 400;
-        }
         > h1::before,
         > h1::after {
             content: "🔥";
-            margin: 0px 45px;
+            margin: 0px 35px;
         }
-       
+        > div {
+            @include flexBox;
+            > h4 {
+                font-weight: 400;
+            }
+            > h4:nth-of-type(1)::after,
+            > h4:nth-of-type(2)::after {
+                content: "·";
+                color: $prim-color;
+                margin: 0 10px;
+            }
+        }
     }
 }
 
@@ -487,6 +495,21 @@ main {
     // Impressum and datenschutz
     .impressum {
         border: none;
+        .impressum-navigation {
+            position: sticky;
+            top: 0;
+            background: $prim-bg;
+            width: 100%;
+            @include flexBox;
+            > a {
+                font-weight: bold;
+                padding: 10px 0;
+                border-bottom: solid 2px transparent
+            }
+            > a:hover {
+                border-bottom: solid 2px $prim-color;
+            }
+        }
         > h2 {
             margin: 35px 0
         };
@@ -600,7 +623,12 @@ footer {
         .banner {  
             > h1::before,
             > h1::after {
-                content: "";
+                content: none;
+            }
+            > div {
+                > h4 {
+                    font-size: 1.5rem;
+                }
             }
         }
     }
@@ -630,9 +658,24 @@ footer {
         }
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     :root {
         font-size: 85%;
+    }
+    header {
+        > .banner {
+            > div {
+                flex-direction: column;
+                > h4 {
+                    font-size: 1.5rem;
+                    margin: 10px 0;
+                }
+                > h4:nth-of-type(1)::after,
+                > h4:nth-of-type(2)::after {
+                    content: none;
+                }
+            }
+        }
     }
     .navigation-trigger {
         .nav-icon {
