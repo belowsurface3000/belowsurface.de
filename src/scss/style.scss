@@ -53,9 +53,9 @@ body {
     }
 }
 
-// Navigation for bigger screens
+// Navigation for screens above 1500px width
 @media screen and (min-width: 1500px) {
-    .navigation {
+    nav {
         z-index: 3000;
         position: fixed;
         top: 50%;
@@ -110,7 +110,7 @@ body {
     }
 }
 
-// Small screen navigation trigger icon
+// Navigation trigger button for screens smaller than 1500px
 .navigation-trigger {
     position: fixed;
     top: 0;
@@ -181,12 +181,13 @@ body {
 .navigation-button-hidden {
     top: -100px;
 }
-// Small screen navigation
+
+// Navigation for screens under 1500px width
 @media screen and (max-width: 1499px) {
     .navigation-trigger {
         display: block;
     }
-    .navigation {
+    nav {
         height: 100vh;
         width: 100vw;
         position: fixed;
@@ -529,6 +530,7 @@ footer {
         top: 0;
         height: 100vh;
         width: 100%;
+        z-index: -100;
         object-fit: cover;
         opacity: .15;
     }
@@ -729,6 +731,12 @@ footer {
                 max-width: 85%;
             }
         }
+        .impressum {
+            > h2 {
+                margin: 0;
+                font-size: 3rem;
+            }
+        }
     }
     footer {
         .content {
@@ -755,7 +763,28 @@ footer {
 }
 @media screen and (max-width: 500px) {
     :root {
-        font-size: 75%;
+        font-size: 70%;
+    }
+    body p {
+        line-height: 1.5;
+        word-spacing: 3px;
+    }
+    nav {
+        > div {
+            > a {
+                font-size: 2rem;
+            }
+        }
+    }
+    .navigation-trigger {
+        margin: 15px;
+        .nav-icon {
+            width: 35px;
+            margin: 5px;
+            span {
+                height: 4px;
+            }
+        }
     }
     main {
         > div {
@@ -770,7 +799,15 @@ footer {
                 height: 200px;
             }
         }
+        .skills-second-flexbox {
+            margin: 0;
+        }
         .references {
+            > div {
+                > div {
+                    margin: 0 0 50px;
+                }
+            }
             .socials {
                 a {
                     margin: 10px;
@@ -786,9 +823,11 @@ footer {
                 padding: 25px 15px;
             }
         } 
-        .impressum {
-            > h2 {
-                margin: 0;
+    }
+    footer {
+        .content {
+            h1 {
+                font-size: 3rem;
             }
         }
     }
