@@ -38,7 +38,7 @@ function Contact() {
         </form> 
       :
         <form>
-          <p>Please not that spam and advertising are strictly forbidden. Type "okay" to unlock the contact form:</p>
+          <p>Please note that spam and advertising are strictly forbidden. Type "okay" to unlock the contact form:</p>
           <label htmlFor="riddle"></label>
           <input type="text" id="riddle" name="riddle" placeholder="Just type 'okay' in here" value={userInput} onChange={(e) => setUserInput(e.target.value.toLowerCase())} required />
         </form>
