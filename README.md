@@ -1,9 +1,18 @@
 # Portfolio website: belowsurface.de
 My portfolio page belowsurface.de. Here i gather a small overview of my skills and references. Also a contact form is available.
-
+Live version: https://belowsurface.de
 # Used languages
 - React
+- JavaScript
+- HTML
 - SCSS
 
+## Used libraries
+- React-Lazyload, to lazyload images once they appear in vision of the use
+- React-Router-Dom, for page navigation
+- React-Router-Hash-Link, for navigating to sections of a page (smoothly)
+- Sass, to import SCSS files without compiling them
+- Emailjs, for the contact form
 
-![Screenshot](https://github.com/belowsurface3000/belowsurface.de/blob/06c3b11d97d11500e00e7830668e485f179c33c4/belowsurface.de-screenshot.png)
+## Note
+The Impressum and Datenschutz pages are not uploaded to Github, but available on the live page.
