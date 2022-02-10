@@ -16,3 +16,8 @@ Live version: https://belowsurface.de
 
 ## Note
 The Impressum and Datenschutz pages are not uploaded to Github, but available on the live page.
+
+## Screenshots
+![Landing Page](screenshots/Home.png)
+![About Section](screenshots/About.png)
+![Lighthouse Report](screenshots/Lighthouse.png)
