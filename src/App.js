@@ -9,6 +9,7 @@ import Datenschutz from "./components/Datenschutz";
 import Tutorials from "./components/Tutorials";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
+import Tutorial from "./components/Tutorial";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="main" element={<Main />} />
               <Route path="tutorials" element={<Tutorials />} />
+              <Route path="tutorials/tutorial" element={<Tutorial />} />
               <Route path="impressum" element={<Impressum />} />
               <Route path="datenschutz" element={<Datenschutz />} />
             </Routes>

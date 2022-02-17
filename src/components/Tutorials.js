@@ -1,6 +1,7 @@
-import React from 'react'
 import { useQuery, gql } from "@apollo/client";
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, Route, Routes } from 'react-router-dom';
+import Tutorial from "./Tutorial";
 
 const GET_TUTORIALS = gql`
     query getTutorials {
@@ -33,7 +34,7 @@ function Tutorials() {
             <h1>Tutorials</h1>
             <div className="tutorial-card-container">
                 {tutorials.map(tutorial => (
-                    <Link key={tutorial.databaseId} to={`tutorial/${tutorial.databaseId}`}>
+                    <Link key={tutorial.databaseId} to={"tutorial"}>
                         <div className="tutorial-card">
                             <h3>{tutorial.tutorialTitle}</h3>
                             {tutorial.tutorialPicture && 
