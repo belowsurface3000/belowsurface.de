@@ -1,4 +1,4 @@
-import React from "react"
+import React, { createContext, useState } from "react"
 import "./scss/style.scss";
 import Footer from "./components/Footer";
 import { HashRouter, Routes } from "react-router-dom";
@@ -11,11 +11,20 @@ import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Tutorial from "./components/Tutorial";
 
+export const tutorialContext = createContext({
+  tutorialId: "",
+  setTutorialId: () => {}
+});
+
 function App() {
+
+  const [ tutorialId, setTutorialId ] = useState();
+  const contextValue = { tutorialId, setTutorialId };
+
   return (
-    <>
-      <div className="background-color"></div>
+    <tutorialContext.Provider value={contextValue}>
       <HashRouter>
+        <div className="background-color"></div>
         <Header />
         <Navigation />
         <main>
@@ -30,7 +39,7 @@ function App() {
         </main>
         <Footer />
       </HashRouter>
-    </>
+    </tutorialContext.Provider>
   );
 }
 

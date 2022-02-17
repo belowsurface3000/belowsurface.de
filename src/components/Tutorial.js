@@ -1,22 +1,27 @@
 import { useQuery, gql } from "@apollo/client";
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { tutorialContext } from "../App";
 
-// const GET_TUTORIAL = gql`
-//     query getTutorial($databaseId: ID!) {
-//         tutorial(id: $databaseId, idType: DATABASE_ID) {
-//             tutorialTitle
-//             tutorialDate
-//             tutorialText
-//             tutorialPicture {
-//                 mediaItemUrl
-//                 altText
-//             }
-//         }
-//     }
-// `;
+const GET_TUTORIAL = gql`
+    query getTutorial($databaseId: ID!) {
+        tutorial(id: $databaseId, idType: DATABASE_ID) {
+            tutorialTitle
+            tutorialDate
+            tutorialText
+            tutorialPicture {
+                mediaItemUrl
+                altText
+            }
+        }
+    }
+`;
 
-function Tutorial(id) {
+function Tutorial() {
 
+    // context to consume the global tutorial id
+    const { tutorialId, setTutorialId } = useContext(tutorialContext);
+
+    console.log(tutorialId)
     // fetch the api data
     // const { data, loading, error } = useQuery(GET_TUTORIAL);
 
@@ -25,7 +30,7 @@ function Tutorial(id) {
 
     // const tutorial = data.tutorials.nodes;
 
-    console.log(id);
+    // console.log(id);
 
     return (
         <div>

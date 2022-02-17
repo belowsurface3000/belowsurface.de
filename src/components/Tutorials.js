@@ -1,7 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
-import { useState } from "react";
-import { Link, Route, Routes } from 'react-router-dom';
-import Tutorial from "./Tutorial";
+import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { tutorialContext } from "../App.js";
 
 const GET_TUTORIALS = gql`
     query getTutorials {
@@ -21,6 +21,9 @@ const GET_TUTORIALS = gql`
 
 function Tutorials() {
 
+    // context to store the tutorial id globally
+    const { tutorialId, setTutorialId } = useContext(tutorialContext);
+
     // fetch the api data
     const { data, loading, error } = useQuery(GET_TUTORIALS);
 
@@ -34,7 +37,7 @@ function Tutorials() {
             <h1>Tutorials</h1>
             <div className="tutorial-card-container">
                 {tutorials.map(tutorial => (
-                    <Link key={tutorial.databaseId} to={"tutorial"}>
+                    <Link key={tutorial.databaseId} onClick={() => setTutorialId(tutorial.databaseId)} to={"tutorial"}>
                         <div className="tutorial-card">
                             <h3>{tutorial.tutorialTitle}</h3>
                             {tutorial.tutorialPicture && 
