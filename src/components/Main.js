@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import Header from "./Header";
-import Navigation from "./Navigation";
 import About from './About';
 import Contact from './Contact';
 import References from './References';
@@ -14,15 +12,11 @@ function Main() {
     }, []);
 
     return <>
-    <Header />
-    <Navigation />
-    <main>
         <About />
         <Services />
         <Skills />
         <References />
         <Contact />
-    </main>
     </>;
 }
 

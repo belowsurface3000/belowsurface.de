@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 
 function OutOfPageFlow() {
@@ -54,12 +55,13 @@ function OutOfPageFlow() {
         {/* NAVIGATION - if nav is hidden and navigation is false */}
         <nav className={(navigationHidden && !navigation) ? "navigation navigation-hidden" : "navigation"}>
             <div>
-                <HashLink smooth to="#top" onClick={toggleNavigation}>Top</HashLink>
-                <HashLink smooth to="#about" onClick={toggleNavigation}>About</HashLink>
-                <HashLink smooth to="#services" onClick={toggleNavigation}>Services</HashLink>
-                <HashLink smooth to="#skills" onClick={toggleNavigation}>Skills</HashLink>
-                <HashLink smooth to="#references" onClick={toggleNavigation}>References</HashLink>
-                <HashLink smooth to="#contact" onClick={toggleNavigation}>Contact</HashLink>
+                <HashLink smooth to="main/#top" onClick={toggleNavigation}>Top</HashLink>
+                <HashLink smooth to="main/#about" onClick={toggleNavigation}>About</HashLink>
+                <HashLink smooth to="main/#services" onClick={toggleNavigation}>Services</HashLink>
+                <HashLink smooth to="main/#skills" onClick={toggleNavigation}>Skills</HashLink>
+                <HashLink smooth to="main/#references" onClick={toggleNavigation}>References</HashLink>
+                <HashLink smooth to="main/#contact" onClick={toggleNavigation}>Contact</HashLink>
+                <HashLink smooth to="tutorials/#tutorial" onClick={toggleNavigation}>Tutorials</HashLink>
             </div>
             <div>
                 <p>Navigation</p>
