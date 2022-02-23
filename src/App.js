@@ -1,11 +1,11 @@
 import React from "react"
 import "./scss/style.scss";
-import Footer from "./Components/Footer";
+import Footer from "./components/Footer";
 import { HashRouter, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import Main from "./Components/Main";
-import Impressum from "./Components/Impressum";
-import Datenschutz from "./Components/Datenschutz";
+import Main from "./components/Main";
+import Impressum from "./components/Impressum";
+import Datenschutz from "./components/Datenschutz";
 
 function App() {
   return (
